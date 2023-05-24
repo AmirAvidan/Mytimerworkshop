@@ -1,3 +1,4 @@
+import React from 'react';
 import { StyleSheet, Text, View, Image, SafeAreaView, Dimensions, TextInput } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
@@ -5,27 +6,31 @@ const { width, height } = Dimensions.get('window');
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.leftContainer}>
-          <Image source={require('./assets/clock.png')} style={styles.clockIcon} />
-        </View>
-        <View style={styles.middleContainer}>
-          <Text style={styles.headerTitle}>My Timer</Text>
-        </View>
-        <View style={styles.rightContainer} />
+      <View style={styles.titleContainer}>
+        <Image source={require('./assets/logoMyCar.png')} style={styles.myCatImage} />
       </View>
       <View style={styles.timerContainer}>
         <Text style={styles.middleTitle}>
-          להתחברות לאפליקציית טיימר אנא הזינו את מספר הטלפון והמייל שלכם
+          להתחברות לאפליקציית אמדוקס אנא הזינו את מספר הטלפון והמייל שלכם
         </Text>
-        <TextInput placeholder="הקלד אימייל" style={styles.textInput} />
-        <TextInput placeholder="הקלד מספר" style={styles.textInput} />
+        <View style={styles.inputContainer}>
+          <View style={styles.textInputContainer}>
+            <TextInput placeholder="מספר טלפון" style={styles.textInput} />
+            <Image source={require('./assets/callSquare.png')} style={styles.inputIcon} />
+          </View>
+        </View>
+        <View style={styles.inputContainer}>
+          <View style={styles.textInputContainer}>
+            <TextInput placeholder="כתובת מייל" style={styles.textInput} />
+            <Image source={require('./assets/messageSquare.png')} style={styles.inputIcon} />
+          </View>
+        </View>
       </View>
       <View style={styles.bottomContainer}>
         <View style={styles.bottomLeft}>
-        <View style={styles.bottomCircle}>
-          <View style={styles.arrow} />
-        </View>
+          <View style={styles.bottomCircle}>
+            <View style={styles.arrow} />
+          </View>
         </View>
         <View style={styles.bottomRight}>
           <Text style={styles.bottomText}>צריך עזרה?</Text>
@@ -40,62 +45,62 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5F5F5',
+    paddingTop: 16,
   },
-  header: {
+  titleContainer: {
+    alignItems: 'center',
+    marginTop: -20, // Adjust the marginTop to move the container down
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: '#FFF',
-    height: height * 0.1,
-    paddingHorizontal: 16,
+    justifyContent: 'flex-end',
+    marginBottom: 16,
   },
-  leftContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-  },
-  middleContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  rightContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-end',
-  },
-  clockIcon: {
-    width: 32,
-    height: 32,
-  },
-  headerTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#000',
+  myCatImage: {
+    width: 200,
+    height: 200,
+    resizeMode: 'contain',
+    marginRight: 10,
+    marginBottom: -10, // Adjust the negative marginBottom to move the image up
   },
   timerContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    marginTop: -80, // Adjust the marginTop to move the container down
+    paddingTop: 40,
   },
   middleTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     color: 'grey',
-    marginBottom: 16,
+    marginBottom: 32, // Increase the marginBottom to add more space below the text
+    textAlign: 'center',
   },
-  textInput: {
-    width: '80%',
-    height: 50,
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  textInputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: '#FFF',
     borderRadius: 8,
     padding: 8,
     marginBottom: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.2)',
+  },
+  inputIcon: {
+    width: 25,
+    height: 25,
+    marginLeft: 10,
+  },
+  textInput: {
+    flex: 1,
+    height: 50,
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'right',
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,0.2)',
   },
   bottomContainer: {
     flexDirection: 'row',
@@ -104,6 +109,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     height: height * 0.1,
     backgroundColor: '#F5F5F5',
+    marginTop: -40, // Adjust the marginTop to move the footer up
   },
   bottomLeft: {
     flex: 1,
