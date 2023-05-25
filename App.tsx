@@ -25,26 +25,27 @@ export default function App() {
             <Image source={require('./assets/messageSquare.png')} style={styles.inputIcon} />
           </View>
         </View>
-      </View>
-      <View style={styles.bottomContainer}>
-        <View style={styles.bottomLeft}>
-          <View style={styles.bottomCircle}>
-            <View style={styles.arrow} />
+        <View style={styles.bottomContainer}>
+          <View style={styles.bottomLeft}>
+            <View style={styles.bottomCircle}>
+              <View style={styles.arrow} />
+            </View>
           </View>
-        </View>
-        <View style={styles.bottomRight}>
-          <Text style={styles.bottomText}>צריך עזרה?</Text>
-          <Text style={styles.smallText}>יצירת קשר עם התמיכה</Text>
+          <View style={styles.bottomRight}>
+            <Text style={styles.bottomText}>צריך עזרה?</Text>
+            <Text style={styles.smallText}>יצירת קשר עם התמיכה</Text>
+          </View>
         </View>
       </View>
     </SafeAreaView>
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: 'white',
     paddingTop: 16,
   },
   titleContainer: {
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   textInput: {
-    flex: 1,
+    flex: 0.9,
     height: 50,
     fontSize: 16,
     fontWeight: 'bold',
@@ -108,8 +109,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 16,
     height: height * 0.1,
-    backgroundColor: '#F5F5F5',
-    marginTop: -40, // Adjust the marginTop to move the footer up
+    backgroundColor: 'white ',
   },
   bottomLeft: {
     flex: 1,
@@ -121,8 +121,8 @@ const styles = StyleSheet.create({
   },
   bottomText: {
     fontSize: 14,
-    fontWeight: 'normal',
-    color: '#808080',
+    fontWeight: 'bold',
+    color: 'black',
   },
   smallText: {
     fontSize: 12,
