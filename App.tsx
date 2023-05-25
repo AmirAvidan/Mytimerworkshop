@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'right',
+    marginLeft: 200,
   },
   bottomContainer: {
     flexDirection: 'row',
